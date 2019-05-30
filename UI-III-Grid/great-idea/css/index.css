@@ -168,20 +168,22 @@ h5 {
 }
 
 /* --------Header  --------- */
-
-.nav {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding-top: 25px;
+.nav_grid {
+	/* Sets up the grid and the 1fr denotes an equal spacing. I can't find the short hand to something like 1fr and auto*FL 
+	justify-items makes sure the nest themselves against the one side. */
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	justify-items: start;
 }
 
-.nav a {
+.nav_grid a {
+	align-self: center;
 	text-decoration: none;
-	color: #868383;
+	color: rgb(90, 90, 90);
+	padding-top: 20px;
 }
 
-.nav a:hover {
+a:hover {
 	color: black;
 	font-weight: bold;
 	font-size: 110%;
@@ -204,17 +206,17 @@ h5 {
 }
 
 .main_top {
-	display: flex;
-	justify-content: space-between;
+	/* display: flex;
+	justify-content: space-between; */
 	align-items: center;
 	padding: 65px 10px;
 }
 
 .main_left {
-	display: flex;
+	/* display: flex;
 	justify-content: space-between;
 	align-items: center;
-	flex-direction: column;
+	flex-direction: column; */
 }
 
 .main_left h1 {
@@ -232,10 +234,10 @@ h5 {
 
 /* --------Mid_top--------- */
 .parent {
-	display: flex;
+	/* display: flex;
 	justify-content: space-between;
 	align-items: flex-start;
-	padding: 25px 0;
+	padding: 25px 0; */
 }
 
 .child {
@@ -259,10 +261,10 @@ p {
 }
 
 .copy {
-	display: flex;
+	/* display: flex;
 	justify-content: center;
 	margin-bottom: 75px;
-	font-size: 75%
+	font-size: 75% */
 }
 
 
@@ -278,17 +280,22 @@ p {
 	height: 20%;
 }
 
-.grey_box {
-	/* Child */
-	border: 1px solid rgb(92, 87, 87);
-	background: rgb(224, 224, 224);
-	padding: 20px;
-	margin-bottom: 35px;
-	width: 422.5px;
-	height: 250px;
+.row {
+	/* Parent */
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 35px;
+
 }
 
 .card {
+	border: 1px solid rgb(92, 87, 87);
+	background: rgb(246, 246, 246);
+	padding: 20px;
+
+	width: 422.5px;
+	height: 250px;
+
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -298,49 +305,30 @@ p {
 	font-size: 105%;
 }
 
-.card h2 {
-	margin: 0;
-}
-
-.row {
-	/* Parent */
-	display: flex;
-	width: 880px;
-	justify-content: space-between;
-	flex-wrap: wrap;
-}
-
 .border_box {
 	border-top: 1px solid rgb(160, 160, 160);
-	margin-top: 20px;
+	margin-top: 35px;
 	padding-top: 35px;
 }
 
 .border_box_bold {
 	border-top: 2px solid rgb(56, 56, 56);
-	margin-top: 20px;
+	margin-top: 35px;
 	padding-top: 35px;
-}
-
-.child {
-	/* Child */
-	width: 45%;
-
-}
-
-.child img {
-	max-width: 400px;
-	height: auto;
 }
 
 .child p {
 	font-size: 110%;
 }
 
+.child h2 {
+	margin-bottom: 25px;
+}
+
 .child li {
 	list-style-type: square;
 	list-style-position: inside;
-	padding-top: 10px;
+	padding-top: 25px;
 	font-weight: bold;
 }
 
@@ -352,6 +340,10 @@ p {
 .h1 {
 	font-size: 140%;
 	margin-top: 25px;
+}
+
+h2 {
+	margin: 0;
 }
 
 .services-header-img {
